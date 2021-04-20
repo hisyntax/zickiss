@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/98d4fb7b23.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Zikiss Music</title>
+  </head>
+  <body>
+    <div class="landing">
+      <div class="landing-intro">
+        <h2>Hi, I'm Zikis</h2>
+        <p>
+          I am an upcoming artist who have an undying passion for music 
+          and i always put all of my time and efforts into music. Music is my life.
+        </p>
+      </div>
+    </div>
+    <div class="latest-songs">
+      <h2>My Latest Release</h2>
+      <div class="music-list">
+        {% for i in lattest_music %}
+        <div
+          class="music-container"
+          onmouseover="audioTag(this)"
+          onclick="audioTag(this)"
+          onfocus="audioTag(this)"
+        >
+          <audio>
+            Your browser does not support audio tag
+            <source src="{{ i.music.url }}" type="audio/mp3" />
+          </audio>
+          <div class="music-name">{{ i.name }}</div>
+          <div class="music-buttons">
+            <div class="play-button">
+              <svg
+                onclick="playAudio()"
+                class="play"
+                height="30"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              <svg
+                onclick="pauseAudio()"
+                class="pause"
+                height="30"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="download-button">
+              <a href="{{ i.music.url }}" download="{{ i.name }} - for more visit https://zikis.herokuapp.com"
+                ><svg
+                  height="30"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="latest-songs">
+      <h2>All-time Music</h2>
+      <div class="music-list">
+        {% for i in music %}
+        <div
+          class="music-container"
+          onmouseover="audioTag(this)"
+          onclick="audioTag(this)"
+          onfocus="audioTag(this)"
+        >
+          <audio>
+            Your browser does not support audio tag
+            <source src="{{ i.music.url }}" type="audio/mp3" />
+          </audio>
+          <div class="music-name">{{ i.name }}</div>
+          <div class="music-buttons">
+            <div class="play-button">
+              <svg
+                onclick="playAudio()"
+                class="play"
+                height="30"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              <svg
+                onclick="pauseAudio()"
+                class="pause"
+                height="30"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="download-button">
+              <a href="{{ i.music.url }}" download="{{ i.name }} - for more visit https://zikis.herokuapp.com"
+                ><svg
+                  height="30"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <footer>
+      <div class="contact-list">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+        <a href="#"><i class="fab fa-whatsapp-square"></i></a>
+      </div>
+      <div class="copyright"><p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Developed by <span> <a href="https://quantum2001.github.io/" target="_blank">samurai</a> </span> & <span><a href="https://quantum2001.github.io/" target="_blank" style="color: red;">iSyntax</a> </span> </p></div>
+    </footer>
+  </body>
+  <script src="{% static 'script.js' %}"></script>
+</html>

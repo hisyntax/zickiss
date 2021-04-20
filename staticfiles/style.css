@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #222;
+  color: white;
+  font-family: sans-serif;
+}
+.landing {
+  height: 100vh;
+  display: flex;
+}
+.side-image {
+  width: 40%;
+}
+.side-image img {
+  height: 100%;
+  width: auto;
+}
+.landing-intro {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.landing-intro h2 {
+  font-size: 40px;
+  line-height: 200%;
+}
+.landing-intro p {
+  font-size: 20px;
+}
+.latest-songs {
+  background: white;
+  color: #222;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.latest-songs h2 {
+  text-align: center;
+}
+.music-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.music-container {
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  width: 80%;
+  max-width: 700px;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid rgb(209, 209, 209);
+  margin: 25px 0;
+  border-bottom: 5px solid rgb(87, 87, 87);
+  cursor: pointer;
+}
+.music-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.445);
+  border: none;
+  border-bottom: 5px solid rgb(87, 87, 87);
+}
+.music-buttons {
+  display: flex;
+}
+.music-buttons div {
+  cursor: pointer;
+}
+.play-button {
+  position: relative;
+  width: 50px;
+  height: 100%;
+}
+.play-button svg {
+  position: absolute;
+  color: crimson;
+}
+.download-button a {
+  color: crimson;
+}
+.download-button a:hover,
+.play-button svg:hover {
+  color: rgb(255, 86, 120);
+}
+
+.pause {
+  display: none;
+}
+footer {
+  height: 100px;
+}
+.contact-list,
+.copyright {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-list a {
+  margin: 0 10px;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+.contact-list a:hover {
+  margin: 0 10px;
+  font-size: 30px;
+  text-decoration: none;
+  color: crimson;
+}
+@media screen and (max-width: 1000px) {
+  .landing {
+    flex-direction: column;
+    height: 80vh;
+  }
+  .side-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .side-image img {
+    height: auto;
+    width: 100%;
+    max-width: 200px;
+  }
+  .landing-intro h2 {
+    font-size: 26px;
+  }
+  .landing-intro p {
+    font-size: 16px;
+  }
+}
